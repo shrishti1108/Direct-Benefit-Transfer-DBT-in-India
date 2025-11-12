@@ -1,0 +1,191 @@
+Sl. No.,state,year,flood_amount_raw,flood_amount,state_norm
+1,Andhra Pradesh,2017,,,andhra pradesh
+2,Arunachal Pradesh,2017,1574.68,1574.68,arunachal pradesh
+3,Assam,2017,4164.81,4164.81,assam
+4,Bihar,2017,,,bihar
+5,Chattisgarh,2017,,,chhattisgarh
+6,Goa,2017,,,goa
+7,Gujarat,2017,3555.87,3555.87,gujarat
+8,Haryana,2017,18.01,18.01,haryana
+9,Himachal Pradesh,2017,51.37,51.37,himachal pradesh
+10,Jharkhand,2017,0.67,0.67,jharkhand
+11,Karnataka,2017,,,karnataka
+12,Kerala,2017,,,kerala
+13,Madhya Praadesh,2017,,,madhya praadesh
+14,Maharashtra,2017,,,maharashtra
+15,Manipur,2017,,,manipur
+16,Meghalaya,2017,0.14,0.14,meghalaya
+17,Mizoram,2017,104.02,104.02,mizoram
+18,Nagaland,2017,551.59,551.59,nagaland
+19,Odisha,2017,334.32,334.32,odisha
+20,Punjab,2017,18.64,18.64,punjab
+21,Rajasthan,2017,1876.86,1876.86,rajasthan
+22,Sikkim,2017,245.44,245.44,sikkim
+23,Tamilnadu,2017,,,tamilnadu
+24,Telengana,2017,,,telengana
+25,Tripura,2017,132.82,132.82,tripura
+26,Uttar Pradesh,2017,308.05,308.05,uttar pradesh
+27,Uttarakhand,2017,,,uttarakhand
+28,West Bengal,2017,17727.94,17727.94,west bengal
+29,Andaman and Nicobar Islands,2017,,,andaman and nicobar islands
+30,Chandigarh,2017,,,chandigarh
+31,Dadra and Nicobar Haveli,2017,0.1,0.1,dadra and nicobar haveli
+32,Ladakh,2017,,,ladakh
+33,Delhi,2017,,,delhi
+34,Jammu and Kashmir,2017,,,jammu and kashmir
+35,Lakshadweep,2017,,,lakshadweep
+36,Puduchcherry,2017,,,puduchcherry
+37,Daman and Diu,2017,0.525,0.525,daman and diu
+38,Total,2017,30665.8455,30665.8455,total
+1,Andhra Pradesh,2018,3687.17,3687.17,andhra pradesh
+2,Arunachal Pradesh,2018,1913.83,1913.83,arunachal pradesh
+3,Assam,2018,2480.98,2480.98,assam
+4,Bihar,2018,5.56,5.56,bihar
+5,Chattisgarh,2018,41.69,41.69,chhattisgarh
+6,Goa,2018,,,goa
+7,Gujarat,2018,118.05,118.05,gujarat
+8,Haryana,2018,89.03,89.03,haryana
+9,Himachal Pradesh,2018,65.9,65.9,himachal pradesh
+10,Jharkhand,2018,0.2,0.2,jharkhand
+11,Karnataka,2018,4620.78,4620.78,karnataka
+12,Kerala,2018,3320.76,3320.76,kerala
+13,Madhya Praadesh,2018,1.67,1.67,madhya praadesh
+14,Maharashtra,2018,,,maharashtra
+15,Manipur,2018,,,manipur
+16,Meghalaya,2018,0.07,0.07,meghalaya
+17,Mizoram,2018,,,mizoram
+18,Nagaland,2018,,,nagaland
+19,Odisha,2018,299.84,299.84,odisha
+20,Punjab,2018,124.52,124.52,punjab
+21,Rajasthan,2018,31.73,31.73,rajasthan
+22,Sikkim,2018,,,sikkim
+23,Tamilnadu,2018,,,tamilnadu
+24,Telengana,2018,,,telengana
+25,Tripura,2018,946.18,946.18,tripura
+26,Uttar Pradesh,2018,547.42,547.42,uttar pradesh
+27,Uttarakhand,2018,,,uttarakhand
+28,West Bengal,2018,54.01,54.01,west bengal
+29,Andaman and Nicobar Islands,2018,,,andaman and nicobar islands
+30,Chandigarh,2018,,,chandigarh
+31,Dadra and Nicobar Haveli,2018,,,dadra and nicobar haveli
+32,Ladakh,2018,,,ladakh
+33,Delhi,2018,,,delhi
+34,Jammu and Kashmir,2018,,,jammu and kashmir
+35,Lakshadweep,2018,,,lakshadweep
+36,Puduchcherry,2018,0.6,0.6,puduchcherry
+37,Daman and Diu,2018,,,daman and diu
+38,Total,2018,18349.97168,18349.97168,total
+1,Andhra Pradesh,2019,698.05,698.05,andhra pradesh
+2,Arunachal Pradesh,2019,,,arunachal pradesh
+3,Assam,2019,3121.98,3121.98,assam
+4,Bihar,2019,,,bihar
+5,Chattisgarh,2019,,,chhattisgarh
+6,Goa,2019,,,goa
+7,Gujarat,2019,2.79,2.79,gujarat
+8,Haryana,2019,0.6,0.6,haryana
+9,Himachal Pradesh,2019,229.11,229.11,himachal pradesh
+10,Jharkhand,2019,13.25,13.25,jharkhand
+11,Karnataka,2019,,,karnataka
+12,Kerala,2019,,,kerala
+13,Madhya Praadesh,2019,,,madhya praadesh
+14,Maharashtra,2019,,,maharashtra
+15,Manipur,2019,,,manipur
+16,Meghalaya,2019,3.66,3.66,meghalaya
+17,Mizoram,2019,,,mizoram
+18,Nagaland,2019,,,nagaland
+19,Odisha,2019,454.82,454.82,odisha
+20,Punjab,2019,,,punjab
+21,Rajasthan,2019,8820.91,8820.91,rajasthan
+22,Sikkim,2019,,,sikkim
+23,Tamilnadu,2019,1.21,1.21,tamilnadu
+24,Telengana,2019,,,telengana
+25,Tripura,2019,437.65,437.65,tripura
+26,Uttar Pradesh,2019,809.63,809.63,uttar pradesh
+27,Uttarakhand,2019,,,uttarakhand
+28,West Bengal,2019,1269.83,1269.83,west bengal
+29,Andaman and Nicobar Islands,2019,,,andaman and nicobar islands
+30,Chandigarh,2019,,,chandigarh
+31,Dadra and Nicobar Haveli,2019,0.03,0.03,dadra and nicobar haveli
+32,Ladakh,2019,,,ladakh
+33,Delhi,2019,,,delhi
+34,Jammu and Kashmir,2019,,,jammu and kashmir
+35,Lakshadweep,2019,5.0,5.0,lakshadweep
+36,Puduchcherry,2019,,,puduchcherry
+37,Daman and Diu,2019,,,daman and diu
+38,Total,2019,15868.52,15868.52,total
+1,Andhra Pradesh,2020,917.66,917.66,andhra pradesh
+2,Arunachal Pradesh,2020,1390.08,1390.08,arunachal pradesh
+3,Assam,2020,2439.73,2439.73,assam
+4,Bihar,2020,810.19,810.19,bihar
+5,Chattisgarh,2020,31.34,31.34,chhattisgarh
+6,Goa,2020,,,goa
+7,Gujarat,2020,2915.31,2915.31,gujarat
+8,Haryana,2020,,,haryana
+9,Himachal Pradesh,2020,60.55,60.55,himachal pradesh
+10,Jharkhand,2020,0.89,0.89,jharkhand
+11,Karnataka,2020,9833.0,9833.0,karnataka
+12,Kerala,2020,,,kerala
+13,Madhya Praadesh,2020,,,madhya praadesh
+14,Maharashtra,2020,,,maharashtra
+15,Manipur,2020,,,manipur
+16,Meghalaya,2020,,,meghalaya
+17,Mizoram,2020,0.05,0.05,mizoram
+18,Nagaland,2020,,,nagaland
+19,Odisha,2020,1509.33,1509.33,odisha
+20,Punjab,2020,,,punjab
+21,Rajasthan,2020,191.17,191.17,rajasthan
+22,Sikkim,2020,349.0,349.0,sikkim
+23,Tamilnadu,2020,,,tamilnadu
+24,Telengana,2020,,,telengana
+25,Tripura,2020,137.92,137.92,tripura
+26,Uttar Pradesh,2020,602.96,602.96,uttar pradesh
+27,Uttarakhand,2020,,,uttarakhand
+28,West Bengal,2020,,,west bengal
+29,Andaman and Nicobar Islands,2020,,,andaman and nicobar islands
+30,Chandigarh,2020,,,chandigarh
+31,Dadra and Nicobar Haveli,2020,,,dadra and nicobar haveli
+32,Ladakh,2020,,,ladakh
+33,Delhi,2020,,,delhi
+34,Jammu and Kashmir,2020,,,jammu and kashmir
+35,Lakshadweep,2020,5.0,5.0,lakshadweep
+36,Puduchcherry,2020,,,puduchcherry
+37,Daman and Diu,2020,,,daman and diu
+38,Total,2020,21194.18,21194.18,total
+1,Andhra Pradesh,2021,6320.46,6320.46,andhra pradesh
+2,Arunachal Pradesh,2021,567.9,567.9,arunachal pradesh
+3,Assam,2021,1072.43,1072.43,assam
+4,Bihar,2021,6444.86,6444.86,bihar
+5,Chattisgarh,2021,1.24,1.24,chhattisgarh
+6,Goa,2021,218.62,218.62,goa
+7,Gujarat,2021,1259.98,1259.98,gujarat
+8,Haryana,2021,614.63,614.63,haryana
+9,Himachal Pradesh,2021,1127.47,1127.47,himachal pradesh
+10,Jharkhand,2021,1.49,1.49,jharkhand
+11,Karnataka,2021,1975.81,1975.81,karnataka
+12,Kerala,2021,,,kerala
+13,Madhya Praadesh,2021,,,madhya praadesh
+14,Maharashtra,2021,,,maharashtra
+15,Manipur,2021,,,manipur
+16,Meghalaya,2021,,,meghalaya
+17,Mizoram,2021,0.4,0.4,mizoram
+18,Nagaland,2021,,,nagaland
+19,Odisha,2021,379.51,379.51,odisha
+20,Punjab,2021,46.61,46.61,punjab
+21,Rajasthan,2021,5477.18,5477.18,rajasthan
+22,Sikkim,2021,92.43,92.43,sikkim
+23,Tamilnadu,2021,7039.56,7039.56,tamilnadu
+24,Telengana,2021,,,telengana
+25,Tripura,2021,38.12,38.12,tripura
+26,Uttar Pradesh,2021,825.26,825.26,uttar pradesh
+27,Uttarakhand,2021,,,uttarakhand
+28,West Bengal,2021,16079.45,16079.45,west bengal
+29,Andaman and Nicobar Islands,2021,0.11,0.11,andaman and nicobar islands
+30,Chandigarh,2021,,,chandigarh
+31,Dadra and Nicobar Haveli,2021,,,dadra and nicobar haveli
+32,Ladakh,2021,,,ladakh
+33,Delhi,2021,18.39,18.39,delhi
+34,Jammu and Kashmir,2021,,,jammu and kashmir
+35,Lakshadweep,2021,,,lakshadweep
+36,Puduchcherry,2021,15.71,15.71,puduchcherry
+37,Daman and Diu,2021,,,daman and diu
+38,Total,2021,49617.62,49617.62,total
