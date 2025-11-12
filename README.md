@@ -8,7 +8,19 @@ Using district-wise DBT data (2019–2023) and flood impact data (2017–2021), 
 
 ## 📊 Problem Statement
 India’s **Direct Benefit Transfer (DBT)** program aims to directly transfer subsidies and welfare benefits into citizens’ bank accounts to reduce leakages and delays.  
-However, **floods** — one of India’s most frequent and severe natural disasters — can disrupt both welfare demand and delivery mechanisms.
+However, **floods** — one of India’s most frequent and severe natural disasters — can disrupt both welfare demand and delivery mechanisms. In India, the Direct Benefit Transfer (DBT) system ensures that government subsidies and welfare benefits reach citizens directly through digital payments.
+However, the effectiveness of DBT can be influenced by external factors like natural disasters, especially floods, which frequently disrupt lives and infrastructure across the country.
+
+This project analyzes how flood events impact DBT distribution across states and districts.
+By combining district-wise DBT data (2019–2023) with flood impact data (2017–2021), it investigates whether flood years correspond to higher DBT disbursements, indicating the system’s responsiveness to crisis situations.
+
+The goal is to:
+
+Examine correlations between flood severity and DBT transfers.
+
+Identify states and districts where DBT increases sharply during flood years.
+
+Evaluate the overall effectiveness of DBT as a disaster-response mechanism using statistical and machine learning models.
 
 This project investigates:
 > Do flood years show an increase in DBT transfers?  
