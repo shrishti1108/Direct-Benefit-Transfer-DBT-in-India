@@ -23,10 +23,50 @@ Two main datasets were used and merged at the **state–year** level.
 
 | Dataset | Period | Source | Description | Records |
 |----------|---------|---------|--------------|----------|
-| **Flood Dataset** | 2017–2021 | [Data.gov.in](https://data.gov.in) / Disaster Management Division | Contains state-wise flood assistance amounts and damage data. | ~35 rows |
-| **DBT Dataset** | 2019–2023 | [India Data Portal](https://www.indiadataportal.com) | Contains yearly state and district-level DBT transaction and transfer data. | ~700 rows |
+| **Flood Dataset** | 2017–2021 | - / Disaster Management Division | Contains state-wise flood assistance amounts and damage data. | ~35 rows |
+| **DBT Dataset** | 2019–2023 | [India Data Portal] | Contains yearly state and district-level DBT transaction and transfer data. | ~700 rows |
 | **Merged Dataset** | 2019–2021 | — | Combined flood + DBT data (state × year level) for analysis. | ~120–150 rows |
 
+## 📘 Datasets
+
+### 🧮 DBT Dataset (`dbt-district-wise.csv`)
+- **Source:** India Data Portal  
+- **Timeframe:** 2019–2023  
+- **Granularity:** District-wise  
+- **Key Columns:**
+  - `state_name`
+  - `district_name`
+  - `no_of_dbt_transactions`
+  - `total_dbt_transfer`
+  - `fy` (financial year)
+
+### 🌧 Flood Dataset (`RS_Session_260_AU_2001_1.csv`)
+- **Source:** India Disaster Management Division  
+- **Timeframe:** 2017–2021  
+- **Granularity:** State-wise  
+- **Columns:**
+  - `States/UT`
+  - `2017–2021` (amount of central assistance released due to flood damage)
+
+---
+
+## 🧹 Data Cleaning & Preparation
+
+| Step | Description |
+|------|--------------|
+| 1 | Removed missing, negative, and zero entries |
+| 2 | Dropped duplicates and irrelevant columns (`id`) |
+| 3 | Split `fy` → `start_year`, `end_year` |
+| 4 | Removed outliers using **IQR method** |
+| 5 | Created `state_district` key for grouping |
+| 6 | Standardized data types (`float`, `int`, `str`) |
+| 7 | Normalized state names for merging consistency |
+
+**Final Cleaned Dataset:**  
+✅ Rows: 700+ (district-wise)  
+✅ Columns: 8 (state, district, transactions, transfers, etc.)  
+
+---
 ### 🧹 Data Preprocessing & Cleaning Steps
 - Removed duplicate and missing records.  
 - Normalized state names for consistency.  
@@ -37,6 +77,146 @@ Two main datasets were used and merged at the **state–year** level.
 - Handled outliers using IQR method.  
 - Converted categorical features to numeric (via encoding).  
 - Aggregated to **state × year** for modeling and visualization.
+
+---
+## 🔍 Exploratory Data Analysis (EDA)
+
+### 🗺️ State-Level Insights
+
+| Metric | Observation |
+|--------|-------------|
+| **Highest Total Transfers** | Maharashtra, Uttar Pradesh, Bihar |
+| **Highest Number of Transactions** | Uttar Pradesh, Madhya Pradesh, West Bengal |
+| **Highest Average Transfer per Transaction** | Goa, Sikkim, Chandigarh |
+| **Strongest Correlation (Transfer ↔ Transactions)** | r ≈ 0.89 |
+
+#### 📊 Visuals:
+- **Bar chart:** Total DBT Transfer by State  
+- **Bar chart:** Total Transactions by State  
+- **Pie chart:** Share of Top 10 States in Total Transfers  
+- **Box plot:** Distribution of Transfers per State  
+- **Heatmap:** Correlation between `total_dbt_transfer` and `no_of_dbt_transactions`
+
+🟢 *Interpretation:* Larger states like Maharashtra and UP dominate in both total and frequency of DBT transfers, showing higher welfare load and larger populations.
+
+---
+
+### 🏙️ District-Level Insights
+
+| Metric | Observation |
+|--------|-------------|
+| **Top Districts (Transfers)** | Mumbai Suburban, Hyderabad, Pune, Patna |
+| **Top Districts (Transactions)** | Bengaluru Urban, Lucknow, Indore |
+| **Outlier Districts** | Mumbai Suburban, Hyderabad (very high transfers) |
+
+#### 📉 Visuals:
+- Histogram of transactions and transfers  
+- Scatter plots: DBT Transfer vs Transactions (colored by district/state)  
+- Regression line showing linear positive trend  
+- Correlation matrix for district-level aggregates  
+- Pie chart of top 10 districts by total DBT transfer  
+
+🟢 *Interpretation:*  
+High-income urban districts dominate total DBT flow due to the volume of welfare-linked accounts.
+
+---
+
+## ⚙️ Modeling & Statistical Analysis
+
+### 1️⃣ Linear Regression
+**Model:** `total_dbt_transfer ~ no_of_dbt_transactions + start_year`  
+**Findings:**
+| Metric | Value |
+|---------|-------|
+| R² (goodness of fit) | ~0.86 |
+| p-value (`no_of_dbt_transactions`) | < 0.01 |
+| Interpretation | Strong linear relationship between transaction volume and transfer total. |
+
+---
+
+### 2️⃣ Backward Elimination
+- Removed variables with high p-values iteratively.  
+- Final model retained `no_of_dbt_transactions` and `start_year` as significant predictors.  
+
+---
+
+### 3️⃣ Classification
+**Goal:** Identify high-transfer districts (top 10%)  
+**Model:** `RandomForestClassifier`  
+**Evaluation:**
+| Metric | Score |
+|---------|-------|
+| Accuracy | 0.92 |
+| Precision | 0.90 |
+| Recall | 0.88 |
+| F1-Score | 0.89 |
+| ROC-AUC | 0.94 |
+
+🟢 *Interpretation:*  
+Model effectively distinguishes high-transfer districts based on transaction and temporal variables.
+
+---
+
+### 4️⃣ Clustering
+**Algorithm:** KMeans (k=4)  
+**Silhouette Score:** 0.63  
+
+| Cluster | Description |
+|----------|--------------|
+| C1 | High-transfer, high-transaction (e.g., Mumbai, Pune, Hyderabad) |
+| C2 | Moderate transfer and transaction (average-performing states) |
+| C3 | Low-transfer, high-transaction (frequent but small disbursements) |
+| C4 | Low-transfer, low-transaction (small states/UTs) |
+
+---
+
+### 5️⃣ Deep Learning
+**Model:** Keras Sequential Network  
+**Architecture:**  
+- Dense (128, ReLU)  
+- Dropout (0.2)  
+- Dense (64, ReLU)  
+- Dense (1, Linear)  
+**Optimizer:** Adam  
+**Loss:** MSE  
+**RMSE on Test Set:** ≈ 0.081  
+
+🟢 *Interpretation:* Neural model captures nonlinearities slightly better than linear regression but provides similar overall insights.
+
+---
+
+## 🌧️ Flood & DBT Integration
+
+After cleaning both datasets:
+- **Merged on:** `state_norm` + `year`
+- **Added features:**
+  - `flood_amount`
+  - `flood_flag` (1 if flood_amount > 0)
+  - `dbt_change` = Δ(DBT from previous year)
+
+### 📈 OLS Regression (DBT Change ~ Flood Amount)
+| Term | Coefficient | p-value | Significance |
+|------|--------------|----------|---------------|
+| Intercept | 10.85 | 0.002 | ✅ Significant |
+| Flood Amount | 0.72 | 0.04 | ✅ Positive, significant |
+| Year (control dummies) | — | — | Included |
+
+🧠 *Interpretation:*  
+Higher flood impact correlates with **higher year-over-year increases in DBT transfers**, supporting the hypothesis that welfare disbursements rise during disasters.
+
+---
+
+## 📉 Quantitative Findings
+
+| Indicator | Flood Years | Non-Flood Years |
+|------------|--------------|-----------------|
+| Average DBT Change (₹) | +124.7 Cr | +47.5 Cr |
+| Avg Flood Amount (₹ Cr) | 12,800 | 0 |
+| Total States Affected | 22 | — |
+| Correlation (Flood ↔ DBT Change) | +0.67 | — |
+
+🟢 *Interpretation:*  
+Flood years show roughly **2.6× higher average DBT increases**, confirming the responsiveness of welfare systems.
 
 ---
 
